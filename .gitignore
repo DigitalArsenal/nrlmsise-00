@@ -1,1 +1,12 @@
-lib/
+# Ignore all files without extensions
+*
+
+# Allow specific files and directories
+!*/
+!*.c
+!*.h
+!*.cpp
+!*.md
+!CMakeLists.txt
+!build.sh
+!.gitignore
