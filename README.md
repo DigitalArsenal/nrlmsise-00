@@ -1,4 +1,9 @@
 # WASM-NRLMSISE-00
+
+This is the WASM port of the NRLMSISE-00 code.
+
+# NRLMSISE-00
+
 Unofficial Github repository of the C source code for the NRLMSISE-00 Model 2001 empirical atmosphere model.
 
 ## Version
