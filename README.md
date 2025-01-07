@@ -1,4 +1,4 @@
-# NRLMSISE-00
+# WASM-NRLMSISE-00
 Unofficial Github repository of the C source code for the NRLMSISE-00 Model 2001 empirical atmosphere model.
 
 ## Version
