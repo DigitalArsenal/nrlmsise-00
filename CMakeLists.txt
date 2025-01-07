@@ -45,8 +45,27 @@ set(CMAKE_C_FLAGS_DEBUG          "-g")
 set(CMAKE_C_FLAGS_RELEASE        "-O2 -DNDEBUG")
 set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
 
+# Append the build flags for Emscripten (only for linking)
+if(EMSCRIPTEN)
+  set(CMAKE_EXECUTABLE_SUFFIX ".mjs")
+  
+  # Compiler flags
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+  
+  # Linker flags
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} \
+    -s WASM=1 \
+    -s MODULARIZE=1 \
+    -s EXPORT_ES6=1 \
+    -s SINGLE_FILE=1 \
+    -s ENVIRONMENT='node' \
+    -s EXPORT_NAME='nrlmsiseModule' \
+    -lembind")
+endif()
+
 # Set CMake build-type. If it not supplied by the user (either directly as an
-# argument of through the "UserSettings.txt" file, the default built type is
+# argument or through the "UserSettings.txt" file, the default build type is
 # "Release".
 if((NOT CMAKE_BUILD_TYPE) OR (CMAKE_BUILD_TYPE STREQUAL "Release"))
    message(STATUS "WARNING: building release version!")
@@ -55,21 +74,26 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
    message(STATUS "WARNING: building debug version!")
 endif()
 
-#Set the header and source files.
+# Set the header and source files.
 set(NRLMSISE00_HEADERS "${SRCROOT}/nrlmsise-00.h")
 set(NRLMSISE00_SOURCES "${SRCROOT}/nrlmsise-00.c"
                        "${SRCROOT}/nrlmsise-00_data.c")
+set(INTERFACE_SOURCE "${SRCROOT}/nrlmsise_interface.cpp")
 
-# Add static libraries.
+# Add static library for NRLMSISE-00
 add_library(nrlmsise00 STATIC ${NRLMSISE00_SOURCES} ${NRLMSISE00_HEADERS})
 
 # Define option and build test executables
 OPTION(NRLMSISE00_WITH_TESTS "Compile NRLMSISE-00 test executables" ON)
 IF(NRLMSISE00_WITH_TESTS)
-        enable_testing()
-        add_executable(nrlmsise-test "${SRCROOT}/nrlmsise-00_test.c")
-        target_link_libraries(nrlmsise-test nrlmsise00 m)
-        add_test(nrlmsise-test "${SRCROOT}/bin/nrlmsise-test")
+    enable_testing()
+    add_executable(nrlmsise-test "${SRCROOT}/nrlmsise-00_test.c")
+    target_link_libraries(nrlmsise-test nrlmsise00 m)
+    add_test(nrlmsise-test "${SRCROOT}/bin/nrlmsise-test")
 ENDIF()
+
+# Build the interface executable
+add_executable(nrlmsise-interface ${INTERFACE_SOURCE})
+target_link_libraries(nrlmsise-interface nrlmsise00 m)
 
 # End of file.
