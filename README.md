@@ -25,3 +25,7 @@ Please refer to the DOCUMENTATION file.
 * [CCMC Modelweb description](http://ccmc.gsfc.nasa.gov/modelweb/atmos/nrlmsise00.html)
  
 * [NRL description](http://www.nrl.navy.mil/research/nrl-review/2003/atmospheric-science/picone/)
+
+## License
+
+[Apache 2.0](LICENSE)
