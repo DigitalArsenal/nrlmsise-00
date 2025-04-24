@@ -10,3 +10,5 @@
 !CMakeLists.txt
 !build.sh
 !.gitignore
+!LICENSE
+!bin/**/*
