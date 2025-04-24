@@ -7,6 +7,7 @@ This is the WASM port of this [NRLMSISE-00 code](https://github.com/magnific0/nr
 ```bash
 npm install nrlmsise-00
 ```
+
 ## Usage
 
 ```javascript

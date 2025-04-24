@@ -1,6 +1,6 @@
 {
   "name": "nrlmsise-00",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "WASM port of the NRLMSISE-00 empirical atmosphere model",
   "main": "bin/nrlmsise-interface.mjs",
   "type": "module",
