@@ -1,0 +1,37 @@
+{
+  "name": "nrlmsise-00",
+  "version": "1.0.3",
+  "description": "WASM port of the NRLMSISE-00 empirical atmosphere model",
+  "main": "bin/nrlmsise-interface.mjs",
+  "type": "module",
+  "module": "bin/nrlmsise-interface.mjs",
+  "scripts": {
+    "build": "make wasm && node scripts/jsdoc.mjs",
+    "test": "node ./test/test_interface.mjs"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "build-wasm/",
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nrlmsise-00.git"
+  },
+  "keywords": [
+    "nrlmsise-00",
+    "atmosphere",
+    "WASM",
+    "empirical-model"
+  ],
+  "exports": {
+    ".": "./bin/index.mjs"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/digitalarsenal/nrlmsise-00/issues"
+  },
+  "homepage": "https://github.com/digitalarsenal/nrlmsise-00#readme"
+}

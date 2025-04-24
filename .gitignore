@@ -13,3 +13,5 @@
 !LICENSE
 !bin/**/*
 !scripts/**/*
+!package.json
+!package-lock.json
