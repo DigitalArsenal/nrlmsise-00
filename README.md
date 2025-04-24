@@ -1,8 +1,8 @@
 # WASM-NRLMSISE-00
 
-This is the WASM port of the NRLMSISE-00 code.
+This is the WASM port of this [NRLMSISE-00 code](https://github.com/magnific0/nrlmsise-00).
 
-# NRLMSISE-00
+## NRLMSISE-00
 
 Unofficial Github repository of the C source code for the NRLMSISE-00 Model 2001 empirical atmosphere model.
 
@@ -18,12 +18,14 @@ Please refer to the DOCUMENTATION file.
 
 ## Resources
 
+* [C++ Source](https://github.com/magnific0/nrlmsise-00)
+
 * [Original C source code](http://www.brodo.de/space/nrlmsise/)
 
 * [Official Fortran source code](http://uap-www.nrl.navy.mil/models_web/msis/msis_home.htm)
 
 * [CCMC Modelweb description](http://ccmc.gsfc.nasa.gov/modelweb/atmos/nrlmsise00.html)
- 
+
 * [NRL description](http://www.nrl.navy.mil/research/nrl-review/2003/atmospheric-science/picone/)
 
 ## License
