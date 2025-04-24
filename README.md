@@ -7,6 +7,42 @@ This is the WASM port of this [NRLMSISE-00 code](https://github.com/magnific0/nr
 ```bash
 npm install nrlmsise-00
 ```
+## Usage
+
+```javascript
+    const module = await nrlmsiseModule();
+    const NrlmsiseModel = module.NrlmsiseModel;
+
+    // Create an instance of the NrlmsiseModel class
+    const model = new NrlmsiseModel();
+
+    // Prepare input values
+    const doy = 172;  // Day of year
+    const sec = 29000;  // Seconds in the day
+    const alt = 400;  // Altitude in km
+    const g_lat = 60;  // Geodetic latitude
+    const g_long = -70;  // Geodetic longitude
+    const lst = 16;  // Local solar time
+    const f107A = 150;  // 81-day average of F10.7 flux
+    const f107 = 150;  // Daily F10.7 flux
+    const ap = 4;  // Magnetic index
+
+    // Run the model
+    model.run_model(doy, sec, alt, g_lat, g_long, lst, f107A, f107, ap);
+
+    // Log the results (access the properties directly)
+    console.log("HE:", model.HE);
+    console.log("O:", model.O);
+    console.log("N2:", model.N2);
+    console.log("O2:", model.O2);
+    console.log("AR:", model.AR);
+    console.log("Total Mass Density:", model.TotalMassDensity);
+    console.log("H:", model.H);
+    console.log("N:", model.N);
+    console.log("Anomalous Oxygen:", model.AnomalousOxygen);
+    console.log("Exospheric Temp:", model.ExosphericTemp);
+    console.log("Temperature at Alt:", model.TemperatureAtAlt);
+```
 
 ## Resources
 
