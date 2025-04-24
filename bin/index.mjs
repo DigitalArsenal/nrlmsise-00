@@ -2,6 +2,22 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
+/**
+ * @class NrlmsiseModel
+ * @classdesc WASM-bound class for NRLMSISE-00 model
+ * @property {number} HE
+ * @property {number} O
+ * @property {number} N2
+ * @property {number} O2
+ * @property {number} AR
+ * @property {number} TotalMassDensity
+ * @property {number} H
+ * @property {number} N
+ * @property {number} AnomalousOxygen
+ * @property {number} ExosphericTemp
+ * @property {number} TemperatureAtAlt
+ */
+
 var nrlmsiseModule = (() => {
   var _scriptName = import.meta.url;
   
