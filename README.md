@@ -2,18 +2,11 @@
 
 This is the WASM port of this [NRLMSISE-00 code](https://github.com/magnific0/nrlmsise-00).
 
-## NRLMSISE-00
+## Installation
 
-Unofficial Github repository of the C source code for the NRLMSISE-00 Model 2001 empirical atmosphere model.
-
-## Version
-
-This version is based on the nrlmsise-00.20151122 release of C sourcecode of NRLMISE-00, which in itself is based on the official NRLMSISE-00 version 2.0 Fortran release.  
-At the moment this (GitHub) version is zero fixes ahead of 20151122, please see the [commit log](https://github.com/magnific0/NRLMISE-00/commits/master) for more information. It is the intention to merge future releases of [brodo.de/space/nrlmsise/](http://www.brodo.de/space/nrlmsise) into this version and communicate any changes made here as suggestions.
-
-## Documentation
-
-Please refer to the DOCUMENTATION file.
+```bash
+npm install nrlmsise-00
+```
 
 ## Resources
 
