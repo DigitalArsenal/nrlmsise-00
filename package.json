@@ -26,7 +26,10 @@
     "empirical-model"
   ],
   "exports": {
-    ".": "./bin/index.mjs"
+    ".": {
+      "import": "./bin/nrlmsise-interface.mjs",
+      "require": "./bin/nrlmsise-interface.cjs"
+    }
   },
   "author": "",
   "license": "Apache-2.0",
