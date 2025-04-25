@@ -30,7 +30,6 @@ wasm:
 	@mkdir -p build-wasm bin
 	@cd build-wasm && emcmake cmake ../ -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
 	@cd build-wasm && cmake --build . --target nrlmsise-interface
-	@mv bin/nrlmsise-interface.mjs bin/index.mjs
 
 clean:
 	rm -rf nrlmsise-test *.o build-wasm bin
