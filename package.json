@@ -1,6 +1,6 @@
 {
   "name": "nrlmsise-00",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "WASM port of the NRLMSISE-00 empirical atmosphere model",
   "main": "bin/nrlmsise-interface.mjs",
   "type": "module",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/nrlmsise-00.git"
+    "url": "https://github.com/digitalarsenal/nrlmsise-00.git"
   },
   "keywords": [
     "nrlmsise-00",
